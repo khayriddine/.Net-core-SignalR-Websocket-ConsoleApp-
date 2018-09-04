@@ -15,8 +15,8 @@ namespace SignalR_Server
         public static void Main(string[] args)
         {
 
-          //  var ConsOut = Console.Out;  //Save the reference to the old out value (The terminal)
-          //  Console.SetOut(new StreamWriter(Stream.Null)); //Remove console output
+            var ConsOut = Console.Out;  //Save the reference to the old out value (The terminal)
+            Console.SetOut(new StreamWriter(Stream.Null)); //Remove console output
 
 
 
@@ -28,7 +28,7 @@ namespace SignalR_Server
 
             host.Start();                     //Start server non-blocking
 
-       //     Console.SetOut(ConsOut);          //Restore output
+            Console.SetOut(ConsOut);          //Restore output
 
             //Regular console code
             while (true)
@@ -92,7 +92,7 @@ namespace SignalR_Server
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, "SignalR Users");
             UserHandler.ConnectedIds.Remove(Context.ConnectionId);
-            Console.WriteLine($"DIsconnected user: {Context.ConnectionId}");
+            Console.WriteLine($"Disconnected user: {Context.ConnectionId}");
             await base.OnDisconnectedAsync(exception);
         }
     }
