@@ -11,9 +11,8 @@ namespace SignalR_Client
         static void Main(string[] args)
         {
             connection = new HubConnectionBuilder()
-            .WithUrl("http://localhost:5050/chathub")
+            .WithUrl("http://localhost:5050/stream")
             .Build();
-
 
             ConnectToServer();
             string message = "Hello world!";
@@ -21,7 +20,6 @@ namespace SignalR_Client
 
             while (true)
             {
-
                 Console.WriteLine(Console.ReadLine());
             }
         }

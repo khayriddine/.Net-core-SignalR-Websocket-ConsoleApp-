@@ -14,44 +14,39 @@ namespace SignalR_Server
     {
         public static void Main(string[] args)
         {
-
-            var ConsOut = Console.Out;  //Save the reference to the old out value (The terminal)
-            Console.SetOut(new StreamWriter(Stream.Null)); //Remove console output
-
-
+            var ConsOut = Console.Out;
+            Console.SetOut(new StreamWriter(Stream.Null));
 
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseStartup<Startup>()
                 .UseUrls("http://localhost:5050")
-                .Build();                     //Modify the building per your needs
+                .Build();
 
-            host.Start();                     //Start server non-blocking
+            host.Start();
 
-            Console.SetOut(ConsOut);          //Restore output
+            Console.SetOut(ConsOut);
 
-            //Regular console code
             while (true)
             {
                 Console.WriteLine(Console.ReadLine());
             }
         }
     }
+
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
-
         }
 
         public void ConfigureProduction(IApplicationBuilder app)
         {
             app.UseSignalR(route =>
-{
-    route.MapHub<MyHub>("/chathub");
-});
-
+            {
+                route.MapHub<MyHub>("/stream");
+            });
         }
     }
 
@@ -59,7 +54,6 @@ namespace SignalR_Server
     {
         public static HashSet<string> ConnectedIds = new HashSet<string>();
     }
-
 
     public class MyHub : Hub
     {
