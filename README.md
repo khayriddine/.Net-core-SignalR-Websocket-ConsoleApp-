@@ -1,3 +1,3 @@
-# .netcore - SignalR - ConsoleApp Websocket server & client - kestrel 
+# .netcore - SignalR - ConsoleApp Websocket server & client - Kestrel 
 
-Example of ConsoleApp websocket server and ConsoleApp websocket client using .net core, SignalR adn Kestrel. 
+Example of ConsoleApp websocket server and client using .netcore, SignalR and Kestrel. 
