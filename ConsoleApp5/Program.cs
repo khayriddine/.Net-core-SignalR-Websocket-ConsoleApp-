@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 
-namespace ConsoleApp5
+namespace SignalR_Server
 {
     class Program
     {
