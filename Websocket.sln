@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR Serwer", "ConsoleApp5\SignalR Serwer.csproj", "{47625345-9218-4225-9F75-765276304DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR Client", "SignalR Client\SignalR Client.csproj", "{44224702-1E0B-411F-8040-5FA778B1CC2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR Client", "SignalR Client\SignalR Client.csproj", "{44224702-1E0B-411F-8040-5FA778B1CC2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
